@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<h2 class="mb-4" >Record a new receipt</h2>
+<h2 class="mb-4" >Update this receipt</h2>
 
-<div >
+<div>
     <form action="" method="post">
         {% csrf_token %}
         <div class="mb-3">
             <label for="{{ form.date.id_for_label }}" class="form-label">Date :</label>
-            {{ form.date }}  (Format YYYY-MM-DD)
+            {{ form.date }} (Format YYYY-MM-DD)
             {% if form.date.errors %}
                 <ul class="list-unstyled">
                     {% for error in form.date.errors %}
@@ -41,8 +41,8 @@
             {% endif %}
         </div>
         <div class="mt-4" >
-            <input type="submit" value="Create" class="btn btn-primary">
-            <a href="{% url 'receipt-list' %}" class="btn btn-danger">Cancel</a>
+            <input type="submit" value="Update" class="btn btn-primary">
+            <a href="{% url 'receipt-detail' form.instance.id %}" class="btn btn-danger">Cancel</a>
         </div>
     </form>
 </div>

@@ -42,5 +42,32 @@ def receipt_create(request):
     )
 
 
-def receipt_update(request):
-    pass
+def receipt_update(request, receipt_id):
+    receipt = Receipt.objects.get(id=receipt_id)
+
+    if request.method == 'POST':
+        form = ReceiptForm(request.POST, instance=receipt)
+        if form.is_valid():
+            receipt = form.save()
+            return redirect('receipt-detail', receipt.id)
+    else:
+        form = ReceiptForm(instance=receipt)
+    return render(
+        request,
+        'receiptapp/receipt_update.html',
+        {'form': form}
+    )
+
+
+def receipt_delete(request, receipt_id):
+    receipt = Receipt.objects.get(id=receipt_id)
+
+    if request.method == 'POST':
+        receipt.delete()
+        return redirect('receipt-list')
+    return render(
+        request,
+        'receiptapp/receipt_delete.html',
+        {'receipt': receipt}
+    )
+

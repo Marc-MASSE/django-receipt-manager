@@ -11,6 +11,8 @@
                 <th>Date</th>
                 <th>Title</th>
                 <th>Amount</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +23,16 @@
                 </td>
                 <td>{{ receipt.title }}</td>
                 <td>{{ receipt.amount }}</td>
+                <td>
+                    <a href="{% url 'receipt-update' receipt.id %}" class="btn btn-primary btn-sm">
+                        Modify
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'receipt-delete' receipt.id %}" class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
