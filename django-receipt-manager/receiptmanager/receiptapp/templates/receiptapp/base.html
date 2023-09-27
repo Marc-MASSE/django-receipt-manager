@@ -2,12 +2,30 @@
 <HTML>
     <head>
         <meta charset="UTF-8">
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"/>
         <title>Receipt Manager</title>
     </head>
-    <body>
-        <header>
-            <H1>Receipt Manager</H1>
+    <body class="col-9 mx-auto">
+        <!-- Banner -->
+        <header class="container border border-dark mx-auto my-3">
+            <div class="row align-items-center bg-primary">
+                <h1 class="text-center text-white my-2">Receipt Manager</h1>
+            </div>
+            <div class="row bg-light">
+                <div>
+                    <ul class="nav justify-content-end">
+                        <li class="mx-1"><a href="{% url 'welcome' %}">Welcome</a></li>
+                        <li class="mx-1"><a href="{% url 'receipt-list' %}">Receipt List</a></li>
+                    </ul>
+                </div>
+            </div>
         </header>
-        {% block content %} {% endblock %}
+        <div>
+           {% block content %} {% endblock %}
+        </div>
+
     </body>
 </html>

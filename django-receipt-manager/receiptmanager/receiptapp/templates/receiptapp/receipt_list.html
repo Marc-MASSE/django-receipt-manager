@@ -1,0 +1,29 @@
+{% extends 'receiptapp/base.html' %}
+
+{% block content %}
+
+<h2>Receipts List</h2>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for receipt in receipts %}
+            <tr>
+                <td>{{ receipt.date }}</td>
+                <td>{{ receipt.title }}</td>
+                <td>{{ receipt.amount }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

@@ -4,5 +4,6 @@ from receiptapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('welcome/', views.welcome)
+    path('welcome/', views.welcome, name='welcome'),
+    path('receipts/', views.receipt_list, name='receipt-list')
 ]
