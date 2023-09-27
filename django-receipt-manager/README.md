@@ -4,6 +4,7 @@
 Application for managing receipts.
 
 A receipt contains 3 pieces of information: date, title and amount.
+The date must be unique.
 
 ## Installation
 
@@ -50,6 +51,23 @@ python manage.py migrate
 http://127.0.0.1:8000/admin/ </br>
 To manage the database.
 
+#### Receipt list ####
+
+http://127.0.0.1:8000/receipts/ </br>
+Display the list of all receipts.
+
+#### Receipt detail ####
+
+http://127.0.0.1:8000/receipt/1/ </br>
+Display all data about a receipt, according to its index.
+
+#### Create a new receipt ####
+
+http://127.0.0.1:8000/receipt/create/ </br>
+To create a new receipt. </br>
+Please note, the date is in the format YYYY-MM-DD 
+and it must not have already been used. 
+The amount must have only 2 digits after the decimal point.
 
 
 

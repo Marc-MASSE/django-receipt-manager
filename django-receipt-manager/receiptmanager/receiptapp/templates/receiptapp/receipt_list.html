@@ -16,7 +16,9 @@
         <tbody>
             {% for receipt in receipts %}
             <tr>
-                <td>{{ receipt.date }}</td>
+                <td>
+                    <a href="{% url 'receipt-detail' receipt.id %}">{{ receipt.date }}</a>
+                </td>
                 <td>{{ receipt.title }}</td>
                 <td>{{ receipt.amount }}</td>
             </tr>
@@ -24,6 +26,5 @@
         </tbody>
     </table>
 </div>
-
 
 {% endblock %}

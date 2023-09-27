@@ -1,0 +1,48 @@
+{% extends 'receiptapp/base.html' %}
+
+{% block content %}
+
+<h2>Record a new receipt</h2>
+
+<div>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="{{ form.date.id_for_label }}" class="form-label">Date (YYYY-MM-DD) :</label>
+            {{ form.date }}
+            {% if form.date.errors %}
+                <ul class="list-unstyled">
+                    {% for error in form.date.errors %}
+                        <li style="color: red; background-color: pink;">{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.title.id_for_label }}" class="form-label">Title:</label>
+            {{ form.title }}
+            {% if form.title.errors %}
+                <ul class="list-unstyled">
+                    {% for error in form.title.errors %}
+                        <li style="color: red; background-color: pink;">{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.amount.id_for_label }}" class="form-label">Amount:</label>
+            {{ form.amount }}
+            {% if form.amount.errors %}
+                <ul class="list-unstyled">
+                    {% for error in form.amount.errors %}
+                        <li style="color: red; background-color: pink;">{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <input type="submit" value="Sure ?" class="btn btn-primary">
+    </form>
+</div>
+
+
+{% endblock %}

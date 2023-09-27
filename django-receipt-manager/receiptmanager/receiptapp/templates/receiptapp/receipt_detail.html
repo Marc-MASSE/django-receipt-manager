@@ -1,0 +1,18 @@
+{% extends 'receiptapp/base.html' %}
+
+{% block content %}
+
+<h2>Receipt Detail</h2>
+
+<div>
+    <ul>
+        <li>Date : {{ receipt.date }}</li>
+        <li>Title : {{ receipt.title }}</li>
+        <li>
+            <span>Amount : {{ receipt.amount }}</span>
+            <span>&#8364;</span>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}
