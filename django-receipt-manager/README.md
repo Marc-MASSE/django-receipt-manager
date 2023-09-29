@@ -76,3 +76,7 @@ The amount must have only 2 digits after the decimal point.
 http://127.0.0.1:8000/receipt/1/delete </br>
 To delete a receipt according to its id.
 
+#### Receipt totals
+
+http://127.0.0.1:8000/receipt/totals/ </br>
+Display the total of all receipts and a table containing the totals by month.
