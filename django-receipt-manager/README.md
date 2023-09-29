@@ -30,10 +30,6 @@ pytest -v tests\
 The number of offices and their composition can be found in the file :
 **constants/data_for_initialisation.py**
 
-## Django account
-
-Superuser
-
 ## Database migration
 
 In receiptmanager directory :
@@ -46,22 +42,22 @@ python manage.py migrate
 
 ## Endpoints examples
 
-#### superuser account ####
+#### superuser account
 
 http://127.0.0.1:8000/admin/ </br>
 To manage the database.
 
-#### Receipt list ####
+#### Receipt list
 
 http://127.0.0.1:8000/receipts/ </br>
 Display the list of all receipts.
 
-#### Receipt detail ####
+#### Receipt detail
 
 http://127.0.0.1:8000/receipt/1/ </br>
-Display all data about a receipt, according to its index.
+Display all data about a receipt according to its id.
 
-#### Create a new receipt ####
+#### Create a new receipt
 
 http://127.0.0.1:8000/receipt/create/ </br>
 To create a new receipt. </br>
@@ -69,5 +65,16 @@ Please note, the date is in the format YYYY-MM-DD
 and it must not have already been used. 
 The amount must have only 2 digits after the decimal point.
 
+#### Update a receipt
 
+http://127.0.0.1:8000/receipt/1/update </br>
+To update a receipt according to its id.
+Please note, the date is in the format YYYY-MM-DD 
+and it must not have already been used. 
+The amount must have only 2 digits after the decimal point.
+
+#### Delete a receipt
+
+http://127.0.0.1:8000/receipt/1/delete </br>
+To delete a receipt according to its id.
 
