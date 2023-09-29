@@ -1,0 +1,39 @@
+{% extends 'receiptapp/base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">Receipt totals</h2>
+
+<div>
+    <div class="col-3 border border-primary p-2">
+        <h3 class="text-primary">Grand Total</h3>
+        <h4>
+            <span>{{ grand_total }}</span>
+            <span>&#8364;</span>
+        </h4>
+    </div>
+    <div class="mt-4 col-5">
+        <h3>Totals per month</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for month, total in totals_per_month %}
+                <tr>
+                    <td>{{ month }}</td>
+                    <td>
+                        <span>{{ total }}</span>
+                        <span>&#8364;</span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

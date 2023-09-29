@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+from receiptapp.controller import Controller
 from receiptapp.forms import ReceiptForm
 from receiptapp.models import Receipt
 
@@ -71,3 +72,15 @@ def receipt_delete(request, receipt_id):
         {'receipt': receipt}
     )
 
+
+def receipt_totals(request):
+    # The prefix - before the date field means that receipts will be sorted in descending order based on their date.
+    receipts = Receipt.objects.all().order_by('-date')
+    controller = Controller(receipts)
+    totals_per_month = controller.totals_per_month()
+    grand_total = controller.grand_total()
+    return render(
+        request,
+        'receiptapp/receipt_totals.html',
+        {'totals_per_month': totals_per_month, 'grand_total': grand_total}
+    )

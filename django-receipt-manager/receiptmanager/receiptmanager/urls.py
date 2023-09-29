@@ -9,5 +9,6 @@ urlpatterns = [
     path('receipt/<int:receipt_id>/', views.receipt_detail, name='receipt-detail'),
     path('receipt/create/', views.receipt_create, name='receipt-create'),
     path('receipt/<int:receipt_id>/update', views.receipt_update, name='receipt-update'),
-    path('receipt/<int:receipt_id>/delete', views.receipt_delete, name='receipt-delete')
+    path('receipt/<int:receipt_id>/delete', views.receipt_delete, name='receipt-delete'),
+    path('receipt/totals/', views.receipt_totals, name='receipt-totals')
 ]
